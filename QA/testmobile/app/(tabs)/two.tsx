@@ -12,14 +12,18 @@ export default function TabTwoScreen() {
 
 
 }
-const handleReceiveMessage = (/*data*/) => {
-/*  let request1 = data.message;
-  console.log(request1);
+const handleReceiveMessage = (data:Object) => {
+  const request1 = data;
 
-  switch (request1.Type) {
-    
-  }
-*/};
+  type ObjectKey = keyof typeof request1;
+ const message = 'message' as ObjectKey;
+ const messageObject= request1[message];
+ type messagekey = keyof typeof messageObject;
+ const typeKey= 'Type' as ObjectKey;
+ console.log(messageObject[typeKey]);
+  
+
+};
   useEffect(()=>{
       socket.on("recieve_message", handleReceiveMessage);
       socket.on('server_message', (data)=>{
