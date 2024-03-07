@@ -1,118 +1,150 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import Layout from "@/components/layout";
+import Galerialoca from "@/components/galerialoca";
+import Carrusel from "@/components/carrusel";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <Layout>
+      <main
+        className={`flex min-h-screen flex-col items-center justify-between px-16 py-14 ${inter.className} h-full bg-slate-100 text-slate-800`}
+      >
+        <div className="">
+          {/* Esto es para web */}
+          <div className="  justify-between hidden lg:flex mb-24">
+            <div className="w-2/4 space-y-5  flex flex-col">
+              <p className="text-5xl mb-7">
+                Texto tipo slogan sobre la transformación de nuestro proyecto
+              </p>
+              <p className="text-xl">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+              </p>
+              <button
+                className="bg-green-400 p-2 px-4 items-center rounded-2xl w-32 mx-auto"
+                id="div-1_input"
+              >
+                Registrarse
+              </button>
+            </div>
+            {/* <div className="min-h-96 min-w-72 h-1/5 w-2/4 bg-slate-600 rounded-lg"></div> */}
+            <div className="min-h-96 min-w-72  w-2/4 ">
+              <img
+                className="h-full w-full object-cover rounded-lg"
+                src="https://cdn.bmeditores.mx/2019/12/WQHZA3YTYZE7TLW734FJ5AGPDI-696x375.jpg"
+              ></img>
+            </div>
+          </div>
+
+          {/* Esto es para movil */}
+          <div className="  justify-between flex flex-col lg:hidden">
+            <div className="subcontainer_div-1 space-y-6 mb-6">
+              <p className="text-4xl">
+                Texto tipo slogan sobre la transformación de nuestro proyecto
+              </p>
+              <p className="div-1_text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+              </p>
+              <button
+                className="bg-green-400 p-2 px-4 items-center rounded-2xl w-32 mx-auto block"
+                id="div-1_input"
+              >
+                Registrarse
+              </button>
+            </div>
+            {/* <div className="min-h-96 min-w-72 h-1/5 w-2/4 bg-slate-600 rounded-lg"></div> */}
+            <div className="h-96 ">
+              <img
+                className="h-full w-full object-cover rounded-lg"
+                src="https://cdn.bmeditores.mx/2019/12/WQHZA3YTYZE7TLW734FJ5AGPDI-696x375.jpg"
+              ></img>
+            </div>
+          </div>
+
+          {/* Esto es para web */}
+          <div className="justify-between hidden lg:flex mb-24 -mx-16">
+            <div className="min-h-96 min-w-72  w-2/4 ">
+              <img
+                className="h-full w-full object-cover rounded-l-lg"
+                src="https://www.nmas.com.mx/_next/image/?url=https%3A%2F%2Fstatic-live.nmas.com.mx%2Fnmas-news%2Fstyles%2Fcorte_16_9%2Fcloud-storage%2F2023-08%2Fcheems-memes-perro.jpg%3Fitok%3DVKUSRRie&w=1920&q=80"
+              ></img>
+            </div>
+            <div className="w-2/4 space-y-5  flex flex-col p-12 bg-slate-400 rounded-r-lg justify-center">
+              <p className="text-3xl font-semibold	">¿Qué hacemos?</p>
+              <div className="bg-slate-800 h-[3px] w-32"></div>
+              <p className="text-balance text-[18px]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+                scelerisque pellentesque urna vel feugiat. Cras euismod
+                hendrerit ligula, ut commodo massa volutpat eu. Donec at viverra
+                nibh. Aenean luctus, enim eget eleifend blandit, nulla lectus
+                sollicitudin arcu, finibus tempus lectus diam vel felis. Aliquam
+                a placerat diam.{" "}
+              </p>
+            </div>
+          </div>
+
+          <div className="text-xl items-center flex flex-col space-y-14">
+            <p className="text-4xl font-bold">¿Cómo funciona EMELTH?</p>
+            <p className="w-1/2 text-center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+              scelerisque pellentesque urna vel feugiat. Cras euismod hendrerit
+              ligula, ut commodo massa volutpat eu. Donec at viverra nibh.
+            </p>
+
+            <Galerialoca></Galerialoca>
+            {/* <div className="subcontainer_icon">
+              <section className="benefit">
+                <i className="fa-regular fa-heart"></i>
+                <p className="div-1_text div-1_text-2 benefit-text">
+                  Beneficio
+                </p>
+              </section>
+              <section className="benefit">
+                <i className="fa-solid fa-clock-rotate-left"></i>
+                <p className="div-1_text div-1_text-2 benefit-text">
+                  Beneficio
+                </p>
+              </section>
+              <section className="benefit">
+                <i className="fa-solid fa-truck-medical"></i>
+                <p className="div-1_text div-1_text-2 benefit-text">
+                  Beneficio
+                </p>
+              </section>
+            </div>
+            <div className="subcontainer_icon-2">
+              <section className="characteristic">
+                <i className="fa-regular fa-circle"></i>
+                <p className="div-1_text div-1_text-2 characteristic-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+                </p>
+              </section>
+              <section className="characteristic">
+                <i className="fa-regular fa-circle"></i>
+                <p className="div-1_text div-1_text-2 characteristic-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+                </p>
+              </section>
+              <section className="characteristic">
+                <i className="fa-regular fa-circle"></i>
+                <p className="div-1_text div-1_text-2 characteristic-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+                </p>
+              </section>
+            </div> */}
+            <div className="subcontainer_incentive">
+              <p className="div-1_text incentive_text">¡Comienza ahora!</p>
+              <p className="div-1_heading div-1_heading-2 div-1_heading-3">
+                Texto tipo slogan sobre la transformación de nuestro proyecto
+              </p>
+              <button id="div-1_input">Registrarse</button>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <Carrusel></Carrusel>
+      </main>
+    </Layout>
   );
 }
