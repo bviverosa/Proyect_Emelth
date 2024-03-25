@@ -2,7 +2,7 @@ import { Alert,StyleSheet,TextInput, Button, View, Text } from 'react-native';
 import React, { useMemo, useState, useEffect } from "react";
 import RadioGroup from "react-native-radio-buttons-group";
 import io from 'socket.io-client'
-const socket = io('http://192.168.20.141:3001');//"https://ipadress:3001"
+const socket = io('http://http://192.168.137.34:3001');//"https://ipadress:3001"
 
 export default function TabTwoScreen() {
   const regex = /^[A-Z][a-z\s]*$/;

@@ -1,4 +1,6 @@
 const express = require('express');
+const linkHost =require('../ports.js');
+
 const app= express();
 const http = require("http");
 const {Server}= require('socket.io');
@@ -11,7 +13,7 @@ let index=0;
 const io= new Server(server,{
     cors:
         {
-            origin:"http://192.168.20.141:3000",
+            origin:linkHost,
             methods:["GET","POST"],
         },
     });
@@ -34,17 +36,15 @@ const io= new Server(server,{
         
         
         socket.emit('server_requests',unreadPetitions);
-        socket.to.emit
+       
         
-        socket.on("send_message",(data)=>{
+        socket.on("send_message",(data,socket)=>{
             console.log(data.message);
+            console.log(socket.id);
             index=Object.keys(unreadPetitions).length;
             unreadPetitions[index+1]=data.message;
             console.log(unreadPetitions);
             socket.broadcast.emit("recieve_message",data)
-            
-
-
         })
         socket.on('disconnect', () => {
             delete connectedUsers[id];
